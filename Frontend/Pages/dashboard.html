@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SummarizeAI Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">S</div>
+                <span class="logo-text">SummarizeAI</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="section">
+                    <h2 class="section-title">Content Input</h2>
+                    <textarea id="text-input" class="content-textarea" placeholder="Paste your text content here..."></textarea>
+                    <div class="alternative-inputs" style="margin-top: 15px;">
+                        <label for="file-input">Or upload a file:</label>
+                        <input type="file" id="file-input" class="content-file-input">
+                    </div>
+                    <button id="summarize-btn" class="generate-btn">Generate Summary</button>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">AI Configuration</h2>
+                    <div class="config-group">
+                        <label class="config-label">Summary Style</label>
+                        <select id="format-select" class="config-select">
+                            <option value="paragraph">Paragraph</option>
+                            <option value="bullet_points">Bullet Points</option>
+                            <option value="one_liner">One-Liner</option>
+                            <option value="academic">Academic</option>
+                        </select>
+                    </div>
+                    <div class="config-group">
+                        <label class="config-label">Language</label>
+                        <select id="language-select" class="config-select">
+                            <option value="en">English</option>
+                            <option value="hi">Hindi</option>
+                            <option value="es">Spanish</option>
+                            <option value="ru">Russian</option>
+                        </select>
+                    </div>
+                    <div class="config-group">
+                        <label class="config-label">Summary Length</label>
+                        <input type="range" id="length-slider" min="1" max="3" value="2" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                 <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Your Result</h2>
+                        <div class="summary-actions">
+                            <button id="copy-btn" class="action-button">📋 Copy</button>
+                            <button id="download-btn" class="action-button">💾 Download</button>
+                        </div>
+                    </div>
+                    <div id="summary-output" class="summary-box">Your summary will appear here...</div>
+                    <div class="keywords-box-wrapper">
+                        <h3 class="section-title">Keywords 🔑</h3>
+                        <div id="keywords-output" class="keywords-box">Keywords will appear here...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
